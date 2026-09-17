@@ -61,19 +61,19 @@
 
 <!-- Contenido de los componentes que faltaban o que estaban sin concretar. -->
 
-| Componente | Daro faltante o sin concretar |
+| Componente | Dato faltante o sin concretar |
 |---|---|
-| Destinatario | El rol que tiene mi responsable, quien seguramente sea el responasble de seguridad del equipo de ciberinteligencia |
-| Decisión | |
-| Objeto | |
-| Horizonte | Antes de las 13:00, con una recomendación |
-| Alcance | |
-| Exclusiones | |
-| Producto | |
+| Destinatario | El responsable de seguridad del equipo de ciberinteligencia |
+| Decisión | Determinar qué medidas de contención aplicar sobre los servicios, credenciales e infraestructura vinculados al incidente |
+| Objeto | Brecha de seguridad en Hugging Face y exposición de credenciales de acceso |
+| Horizonte | Antes de las 13:00, con una recomendación para presentar en el comité |
+| Alcance | Limitar la investigación a nuestra propia infraestructura que integren servicios de Hugging Face |
+| Exclusiones | Excluir el uso de elementos vulnerados que hayan sido expuestos al ataque, como tokens potencialmente comprometidos |
+| Producto | Reporte de situación, elementos que tienen mayor probabilidad de haber sido vulnerados y brindar propuesta de acción inmediata |
 
 ### 2.3 Requerimiento en una frase
 
->
+> Determinar antes de las 13:00 si el ciberataque realizado a Hugging Face tiene un impacto y si vulnera los servicios, credenciales e infraestructura internos asociados al incidente y proponer un informe al responsable del equipo de ciberinteligencia con medidas de acción inmediata, omitiendo cualquier prueba con tokens comprometidos
 
 ### 2.4 Preguntas de inteligencia
 

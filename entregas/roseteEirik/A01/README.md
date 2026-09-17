@@ -45,19 +45,31 @@
 
 ### 2.1 Revisión de los componentes de la petición
 
+> «He visto lo de la brecha de Hugging Face. Mira a ver todo lo que haya y dime si nos afecta.»
+
 | Componente | ¿Está? | Qué dice, o qué falta |
 |---|---|---|
-| Destinatario | Sí | Es impreciso, puede inferirse que es mi responsable pero, ¿qué rol tiene mi responsable independientemente de que está involucado al equipo de ciberinteligencia? ¿es el único destinatario o persona interesada/involucarada? |
-| Decisión |  | |
-| Objeto | | |
-| Horizonte | | |
-| Alcance | | |
-| Exclusiones | | |
-| Producto | | |
+| Destinatario | Parcial | Es impreciso, puede inferirse que es mi responsable porque menciona la palabra "*Dime*" |
+| Decisión | No | Únicamente esta preguntando si nos afecta, no está solicitando una decisión ni acciones/medidas que implementar. |
+| Objeto | Sí | Nos comunica lo de la brecha a Hugging Face, pero desconocemos que elementos y servicios manejamos nosotros o con qué es que estamos relacionados con el incidente; está delegando todo el trabajo para que "mire todo lo que haya" |
+| Horizonte | No | No hay una solicitud expresa de tiempo o urgencia en la petición del responsable |
+| Alcance | No | La información acerca de la cronología inicial y los hechos son datos públicos, no nos fueron brindados. No tenemos datos de qué "nos afecta", es decir, no hay perímetro interno delimitado para investigar |
+| Exclusiones | No | No limita ni prohibe acciones a realizar |
+| Producto | No | Dice "*Dime*", pero no específica el formato de entrega |
 
 ### 2.2 Componentes completados
 
 <!-- Contenido de los componentes que faltaban o que estaban sin concretar. -->
+
+| Componente | Daro faltante o sin concretar |
+|---|---|
+| Destinatario | El rol que tiene mi responsable, quien seguramente sea el responasble de seguridad del equipo de ciberinteligencia |
+| Decisión | |
+| Objeto | |
+| Horizonte | Antes de las 13:00, con una recomendación |
+| Alcance | |
+| Exclusiones | |
+| Producto | |
 
 ### 2.3 Requerimiento en una frase
 

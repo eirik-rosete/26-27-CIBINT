@@ -3,7 +3,7 @@
 ## Estudiante
 
 - Nombre: Eirik Alberto Rosete León
-- Carpeta personal: entregas/roseteEirik
+- Carpeta personal: [/entregas/roseteEirik]((/entregas/roseteEirik/))
 
 ---
 
@@ -25,8 +25,8 @@
 
 | Capa | Formulación | Filas usadas | Qué limitación tiene |
 |---|---|---|---|
-| Dato | La actividad escaló hasta el acceso a nivel de nodo, recolección de credenciales de nube y de clúster, y movimiento lateral por varios clústeres internos a lo largo de un fin de semana. | C06 | El dato no aclara que servicios o credenciales propias podrían haber estado en esos clústeres |
-| Información | El acceso no autorizao vuleró credenciales y conjuntos de datos internos, afectando los clústeres y nodos de producción un fin de semana completo | C03, C04, C06, S06, S10 | No se especifica si los conjuntos de datos afectó a cuentas o tokens de usuarios externos |
+| Dato | La actividad escaló hasta el acceso a nivel de nodo, recolección de credenciales de nube y de clúster, y movimiento lateral por varios clústeres internos a lo largo de un fin de semana. | C06 | El dato no aclara qué servicios o credenciales propias podrían haber estado en esos clústeres |
+| Información | El acceso no autorizado vulneró credenciales y conjuntos de datos internos, afectando los clústeres y nodos de producción un fin de semana completo | C03, C04, C06, S06, S10 | No se especifica si los conjuntos de datos afectó a cuentas o tokens de usuarios externos |
 | Inteligencia | Tomando en cuenta la extracción de conjuntos de datos y posible asociación de credenciales internas con productos o tokens de organizaciones y usuarios, es posible que las credenciales estén expuestas, por lo que es recomendable hacer una rotación de credenciales | C04, S06, S07, O3 | Se sigue evaluando el impacto a clientes externos (C09) por lo que no se sabe si las credenciales fueron expuestas o la rotación es una medida preventiva |
 
 ---
@@ -67,7 +67,7 @@
 
 | Prioridad | Pregunta | Te ayuda a decidir |
 |---:|---|---|
-| 1 | ¿Existe riesgo directo de que el compromiso de credencialesinternas de producción (C04, C06, S06, S10) haya alcanzado a nuestras credenciales de usuario o tokens de organización (S05) asociadas a la plataforma? | O3 (Rotar las credenciales de la plataforma) y O5 (Revisar credenciales propias publicadas fuera). |
+| 1 | ¿Existe riesgo directo de que el compromiso de credenciales internas de producción (C04, C06, S06, S10) haya alcanzado a nuestras credenciales de usuario o tokens de organización (S05) asociadas a la plataforma? | O3 (Rotar las credenciales de la plataforma) y O5 (Revisar credenciales propias publicadas fuera). |
 | 2 | ¿La extracción de conjuntos de datos internos (C04, S07) o el acceso a nodos de producción (C06) afectaron la integridad de los modelos o librerías (S01, S08) que consumimos en nuestros servicios, más allá de lo declarado por una parte del caso, la plataforma (C07, C08)? | O2 (Congelar las descargas automatizadas) y O4 (Verificar la integridad de los artefactos ya descargados) |
 
 ---
@@ -77,6 +77,7 @@
 ### 3.1 Recorrido por las fases
 
 | Fase | Entrada utilizada | Decisión o tarea | Salida | Siguiente fase | 
+|---|---|---|---|---|
 | Dirección y planificación | Petición informal del responsable "He visto lo de la brecha" y las opciones que tenemos antes del comité | Concretar los 7 componentes del requerimiento, fijar el horizonte a las 13:00, establecer las exclusiones (no interactuar con tokens de la plataforma externa) y priorizar las 2 preguntas de inteligencia | Requerimiento de inteligencia acotado y plan de investigación centrado en credenciales (S05, S06) e integridad de artefactos (S01, S08) | Obtención | 
 | Obtención | Requerimiento acotado y las 2 preguntas de inteligencia priorizadas | Recopilar las evidencias públicas (C01–C14), superficies (S01–S10) y fuentes (F01–F12), respetando la prohibición de escaneo externo | Muestra de eventos, declaraciones oficiales de la plataforma y referencias de superficies sin procesar | Procesamiento | 
 | Procesamiento | Muestra de hechos (C01–C14) y superficies de la plataforma (S01–S10) | Cruzar e integrar los hechos con las superficies afectadas (C04, C06 con S06, S10), clasificar por grado de corroboración (una_parte, prensa) y aislar las lagunas explícitas (C09, C13) | Matriz estructurada de eventos procesados, verificar impacto en credenciales internas e inventario de lagunas de información | Análisis y producción | 
@@ -104,15 +105,13 @@ Confianza media. Toda la información proviene del comunicado de la entidad afec
 |---|---|---|
 | O1 - Seguir con normalidad | NO | Imprudente mientras no se roten nuestras credenciales (S05) |
 | O2 - Congelar descargas automáticas | SÍ | Medida preventiva temporal y reversible mientras se contenga el entorno |
-| O3 - Rotar credenciales | SÍ | Prioritaria Mitiga el riesgo de suplantación (C04, C06) sin impacto operativo |
+| O3 - Rotar credenciales | SÍ | Prioritaria; mitiga el riesgo de suplantación (C04, C06) sin impacto operativo |
 | O4 - Verificar artefactos locales | SÍ | Control pasivo interno mediante comprobación de hashes (C07) |
 | O5 - Revisar credenciales externas | SÍ | Verificación rápida para descartar fuga de tokens de organización (S05) |
 | O6 - Avisar a clientes | NO | Desproporcionado; la investigación (C09) sigue abierta sin afectación en nuestros servicios |
 | O7 - Mantener observación | SÍ | Permite fijar un punto de revisión tras el comité ante nuevos datos |
 
 **Limitación**
-
-<!-- Qué te falta saber y cómo condiciona lo anterior. -->
 
 La evaluación de afectación a datos de clientes continúa abierta (C09) y se desconoce la identidad del responsable o el modelo de agentes (C13), lo que impide descartar una exfiltración previa de credenciales.
 
@@ -133,7 +132,7 @@ La evaluación de afectación a datos de clientes continúa abierta (C09) y se d
 | Conclusión previa | ¿Cambia o se confirma? | Hecho que lo provoca | Nueva formulación |
 |---|---|---|---|
 | Se asumía incertidumbre y riesgo sobre exfiltración masiva de datos de clientes (C09). | Cambia | C19 (2026-07-27) | El acceso a datos de clientes fue exclusivamente de lectura y se limitó a cinco conjuntos de datos de un banco de pruebas, descartando la extracción masiva (C19). |
-| Se planteaba la hipótesis de un ataque dirigido por un actor humano o grupo cibercriminal (C13). | Cambia | C17 (2026-07-21) | La intrusión no fue dirigida por una persona, sino que se origino en modelos de OpenAI que operaban con salvaguardas reducidas durante una evaluación interna (C17). |
+| Se planteaba la hipótesis de un ataque dirigido por un actor humano o grupo cibercriminal (C13). | Cambia | C17 (2026-07-21) | La intrusión no fue dirigida por una persona, sino que se originó en modelos de OpenAI que operaban con salvaguardas reducidas durante una evaluación interna (C17). |
 | Los modelos y artefactos públicos distribuidos en producción no sufrieron alteraciones (C07, C08). | Se confirma | C20 (2026-07-27) | Se confirma que el acceso de escritura obtenido sobre el control de versiones no llegó a producir ningún cambio publicado en los artefactos (C20). |
 
 ---
@@ -154,15 +153,18 @@ La retroalimentación demuestra que la inteligencia es un ciclo dinámico donde 
 
 | Identificador | Fuente | URL | Fecha de consulta |
 |---|---|---|---|
-| F01 | Hugging Face | https://huggingface.co/blog/security-incident-july-2026 | 2026-07-20 | | F02 | OpenAI | https://openai.com/index/hugging-face-model-evaluation-security-incident/ | 2026-07-21 | | F03 | Hugging Face | https://huggingface.co/blog/agent-intrusion-technical-timeline | 2026-07-27 | | F05 | TechRadar Pro | https://www.techradar.com/pro/security/hugging-face-reveals-unauthorized-access-to-ai-model-hosting-platform | 2026-07-20 |
+| F01 | Hugging Face | https://huggingface.co/blog/security-incident-july-2026 | 2026-07-20 |
+| F02 | OpenAI | https://openai.com/index/hugging-face-model-evaluation-security-incident/ | 2026-07-21 |
+| F03 | Hugging Face | https://huggingface.co/blog/agent-intrusion-technical-timeline | 2026-07-27 |
+| F05 | TechRadar Pro | https://www.techradar.com/pro/security/hugging-face-reveals-unauthorized-access-to-ai-model-hosting-platform | 2026-07-20 |
 
 ## Decisiones y limitaciones
 
-Se respeto el uso de fuentes de manera cronológica y no hubo interacción con la infraestructura del caso.
+Se respetó el uso de fuentes de manera cronológica y no hubo interacción con la infraestructura del caso.
 
 ## Colaboración
 
-Trabajo de manera individual
+Trabajo realizado de manera individual
 
 ## Uso de inteligencia artificial
 

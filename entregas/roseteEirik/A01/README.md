@@ -3,7 +3,7 @@
 ## Estudiante
 
 - Nombre: Eirik Alberto Rosete León
-- Carpeta personal: [/entregas/roseteEirik]((/entregas/roseteEirik/))
+- Carpeta personal: [/entregas/roseteEirik](/entregas/roseteEirik/)
 
 ---
 
@@ -15,7 +15,7 @@
 |---|---|---|
 | A | Dato | Es un suceso reportado con una fecha, sin relación con algún otro dato o contexto (C03) |
 | B | Información | Se identifica que hacen falta datos y eso conlleva estructurar lo que conocemos. (C13) |
-| C | Información | Se hacen uso de datos (C05, C08) entrelazados organizados en un mismo contexto: se identificaron qué plataformas se vieron afectadas (S06), que fueron meramente internas (C06). |
+| C | Información | Se hace uso de datos (C05, C08) entrelazados organizados en un mismo contexto: se identificó qué plataformas se vieron afectadas (S06), que fueron meramente internas (C06). |
 | D | Ninguna | Es un supuesto no fundamentado, está saltando a una conclusión por algo no confirmado, que no equivale a inexistente (C07) |
 | E | Inteligencia | Establece un juicio de probabilidad estimativo, está orientado a tomar una decisión antes del comité y propone acciones inmediatas (C06, C08) |
 
@@ -26,7 +26,7 @@
 | Capa | Formulación | Filas usadas | Qué limitación tiene |
 |---|---|---|---|
 | Dato | La actividad escaló hasta el acceso a nivel de nodo, recolección de credenciales de nube y de clúster, y movimiento lateral por varios clústeres internos a lo largo de un fin de semana. | C06 | El dato no aclara qué servicios o credenciales propias podrían haber estado en esos clústeres |
-| Información | El acceso no autorizado vulneró credenciales y conjuntos de datos internos, afectando los clústeres y nodos de producción un fin de semana completo | C03, C04, C06, S06, S10 | No se especifica si los conjuntos de datos afectó a cuentas o tokens de usuarios externos |
+| Información | El acceso no autorizado vulneró credenciales y conjuntos de datos internos, afectando los clústeres y nodos de producción un fin de semana completo | C03, C04, C06, S06, S10 | No se especifica si los conjuntos de datos afectaron a cuentas o tokens de usuarios externos |
 | Inteligencia | Tomando en cuenta la extracción de conjuntos de datos y posible asociación de credenciales internas con productos o tokens de organizaciones y usuarios, es posible que las credenciales estén expuestas, por lo que es recomendable hacer una rotación de credenciales | C04, S06, S07, O3 | Se sigue evaluando el impacto a clientes externos (C09) por lo que no se sabe si las credenciales fueron expuestas o la rotación es una medida preventiva |
 
 ---
@@ -40,12 +40,12 @@
 | Componente | ¿Está? | Qué dice, o qué falta |
 |---|---|---|
 | Destinatario | Parcial | Es impreciso, puede inferirse que es mi responsable porque menciona la palabra "*Dime*" |
-| Decisión | No | Únicamente esta preguntando si nos afecta, no está solicitando una decisión ni acciones/medidas que implementar. |
-| Objeto | Sí | Nos comunica lo de la brecha a Hugging Face, pero desconocemos que elementos y servicios manejamos nosotros o con qué es que estamos relacionados con el incidente; está delegando todo el trabajo para que "mire todo lo que haya" |
+| Decisión | No | Únicamente está preguntando si nos afecta, no está solicitando una decisión ni acciones/medidas que implementar. |
+| Objeto | Sí | Nos comunica lo de la brecha a Hugging Face, pero desconocemos qué elementos y servicios manejamos nosotros o con qué es que estamos relacionados con el incidente; está delegando todo el trabajo para que "mire todo lo que haya" |
 | Horizonte | No | No hay una solicitud expresa de tiempo o urgencia en la petición del responsable |
 | Alcance | No | La información acerca de la cronología inicial y los hechos son datos públicos, no nos fueron brindados. No tenemos datos de qué "nos afecta", es decir, no hay perímetro interno delimitado para investigar |
-| Exclusiones | No | No limita ni prohibe acciones a realizar |
-| Producto | No | Dice "*Dime*", pero no específica el formato de entrega |
+| Exclusiones | No | No limita ni prohíbe acciones a realizar |
+| Producto | No | Dice "*Dime*", pero no especifica el formato de entrega |
 
 ### 2.2 Componentes completados
 
@@ -170,11 +170,10 @@ Trabajo realizado de manera individual
 
 > **Apartado obligatorio.** Si no lo completas, tu entrega está incompleta y no se califica.
 
-| | |
-|---|---|
-| **Herramienta utilizada** | Gemini Notebook |
-| **Para qué la usaste** | Estructurar la información, corrección de incoherencia y verificación de trazabilidad de los identificadores |
-| **En qué fase intervino** | Del paso 1 al 5 y la revisión final |
+| **Herramienta utilizada** | **Para qué la usaste** | **En qué fase intervino** |
+|---|---|---|
+| Gemini Notebook | Estructurar la información, corrección de incoherencias y verificación de trazabilidad de los identificadores | Del paso 1 al 5 y la revisión final |
+| Gemini Pro 3.1 | Gramática y correcciones ortográficas | Revisión final |
 
 ## Comprobación
 

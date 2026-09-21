@@ -49,8 +49,6 @@
 
 ### 2.2 Componentes completados
 
-<!-- Contenido de los componentes que faltaban o que estaban sin concretar. -->
-
 | Componente | Dato faltante o sin concretar |
 |---|---|
 | Destinatario | El responsable de seguridad del equipo de ciberinteligencia |
@@ -134,17 +132,21 @@ La evaluación de afectación a datos de clientes continúa abierta (C09) y se d
 
 | Conclusión previa | ¿Cambia o se confirma? | Hecho que lo provoca | Nueva formulación |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
+| Se asumía incertidumbre y riesgo sobre exfiltración masiva de datos de clientes (C09). | Cambia | C19 (2026-07-27) | El acceso a datos de clientes fue exclusivamente de lectura y se limitó a cinco conjuntos de datos de un banco de pruebas, descartando la extracción masiva (C19). |
+| Se planteaba la hipótesis de un ataque dirigido por un actor humano o grupo cibercriminal (C13). | Cambia | C17 (2026-07-21) | La intrusión no fue dirigida por una persona, sino que se origino en modelos de OpenAI que operaban con salvaguardas reducidas durante una evaluación interna (C17). |
+| Los modelos y artefactos públicos distribuidos en producción no sufrieron alteraciones (C07, C08). | Se confirma | C20 (2026-07-27) | Se confirma que el acceso de escritura obtenido sobre el control de versiones no llegó a producir ningún cambio publicado en los artefactos (C20). |
+
+---
 
 ### 5.2 Efecto sobre la recomendación
 
-<!-- ¿Cambiarías tu recomendación al comité? Sí o no, y por qué. -->
+NO cambiaría la recomendación inicial. Mantener la rotación de credenciales (O3) y la congelación/verificación preventiva (O2, O4) fue una decisión proporcionada y acertada con la información disponible el 20 de julio. El desarrollo posterior reveló que los agentes ejecutaron más de 17.600 acciones (C18) y comprometieron cuentas de proveedores de terceros (C22), por lo que aislar nuestras credenciales y automatizaciones previno cualquier exposición secundaria.
+
+---
 
 ### 5.3 Conclusión sobre la retroalimentación
 
-<!-- Una frase. -->
+La retroalimentación demuestra que la inteligencia es un ciclo dinámico donde la nueva evidencia permite precisar las causas y el alcance real del riesgo sin invalidar la proporcionalidad de las medidas preventivas adoptadas bajo incertidumbre.
 
 ---
 
@@ -152,17 +154,15 @@ La evaluación de afectación a datos de clientes continúa abierta (C09) y se d
 
 | Identificador | Fuente | URL | Fecha de consulta |
 |---|---|---|---|
-| F01 | | | AAAA-MM-DD |
-
-<!-- Solo las que hayas usado de verdad. Si añades fuentes propias, numéralas F13, F14… -->
+| F01 | Hugging Face | https://huggingface.co/blog/security-incident-july-2026 | 2026-07-20 | | F02 | OpenAI | https://openai.com/index/hugging-face-model-evaluation-security-incident/ | 2026-07-21 | | F03 | Hugging Face | https://huggingface.co/blog/agent-intrusion-technical-timeline | 2026-07-27 | | F05 | TechRadar Pro | https://www.techradar.com/pro/security/hugging-face-reveals-unauthorized-access-to-ai-model-hosting-platform | 2026-07-20 |
 
 ## Decisiones y limitaciones
 
-<!-- Cualquier decisión de método o límite que quieras dejar por escrito. -->
+Se respeto el uso de fuentes de manera cronológica y no hubo interacción con la infraestructura del caso.
 
 ## Colaboración
 
-<!-- Si trabajaste algún aspecto con otra persona, indica qué parte fue individual. -->
+Trabajo de manera individual
 
 ## Uso de inteligencia artificial
 
@@ -170,16 +170,16 @@ La evaluación de afectación a datos de clientes continúa abierta (C09) y se d
 
 | | |
 |---|---|
-| **Herramienta utilizada** | <!-- Nombre, o «No se ha utilizado ninguna» --> |
-| **Para qué la usaste** | <!-- Corrección de texto, búsqueda de ideas, generación de código, redacción… --> |
-| **En qué fase intervino** | <!-- Paso 1, paso 3, revisión final… --> |
+| **Herramienta utilizada** | Gemini Notebook |
+| **Para qué la usaste** | Estructurar la información, corrección de incoherencia y verificación de trazabilidad de los identificadores |
+| **En qué fase intervino** | Del paso 1 al 5 y la revisión final |
 
 ## Comprobación
 
-- [ ] He trabajado sobre una copia de la plantilla, dentro de `entregas/apellidoNombre/A01/`.
-- [ ] He resuelto los pasos 1 a 4 solo con la cronología inicial.
-- [ ] Cada afirmación lleva su identificador y he comprobado que dice lo que le atribuyo.
-- [ ] No he interactuado con ninguna infraestructura ni servicio del caso.
-- [ ] No incluyo exploits, credenciales, indicadores operativos ni datos personales.
-- [ ] He incluido el apartado de uso de inteligencia artificial con los tres puntos.
-- [ ] Solo he modificado `entregas/apellidoNombre/A01/`.
+- [X] He trabajado sobre una copia de la plantilla, dentro de `entregas/apellidoNombre/A01/`.
+- [X] He resuelto los pasos 1 a 4 solo con la cronología inicial.
+- [X] Cada afirmación lleva su identificador y he comprobado que dice lo que le atribuyo.
+- [X] No he interactuado con ninguna infraestructura ni servicio del caso.
+- [X] No incluyo exploits, credenciales, indicadores operativos ni datos personales.
+- [X] He incluido el apartado de uso de inteligencia artificial con los tres puntos.
+- [X] Solo he modificado `entregas/apellidoNombre/A01/`.

@@ -1,15 +1,5 @@
 # A01 · Del dato a la inteligencia
 
-> **Cómo usas esta plantilla**
->
-> Cópiala a `entregas/apellidoNombre/A01/README.md` y trabaja **sobre esa copia, dentro de tu carpeta**. No edites este archivo ni la carpeta de nadie más.
->
-> Rellena los apartados sin cambiar su orden ni su numeración. Si algo no te aplica, explica por qué en lugar de borrarlo. Borra estas instrucciones antes de entregar.
->
-> Recuerda: debes acompañar cada afirmación con el identificador del que sale — `(C05)`, `(C07, C08)`, `(F01)`. Resuelves los pasos 1 a 4 solo con la cronología inicial.
->
-> Enunciado completo: [A01 · Del dato a la inteligencia](../../../actividades/A01-del-dato-a-la-inteligencia/README.md)
-
 ## Estudiante
 
 - Nombre: Eirik Alberto Rosete León
@@ -24,10 +14,10 @@
 | Frase | Categoría | Justificación |
 |---|---|---|
 | A | Dato | Es un suceso reportado con una fecha, sin relación con algún otro dato o contexto (C03) |
-| B | Dato | El dato expone únicamente que se desconoce que responsable o agente fueron los que realizaron el ataque (C13) |
-| C | Inteligencia | Esto es inteligencia debido a que hace uso de datos (C05, C08) entrelazados en un mismo contexto (el ciberataque) y la necesidad concreta es la de identificar qué plataformas se vieron realmente afectadas (S06), que fueron meramente internas (C06), permitiendo notificar el alcance del ataque. |
-| D | Información | Estamos brindándole contexto de nuestra situación como empresa a un dato brindado por el reporte de Hugging Face (C07) |
-| E | Ninguno | A pesar de brindar acciones de emergencia, no estamos brindando las justificaciones necesarias ni haciendo referencia a los datos brindados por el reporte de Hugging Face, que en su caso deberían ser: C06, C08 |
+| B | Información | Se identifica que hacen falta datos y eso conlleva estructurar lo que conocemos. (C13) |
+| C | Información | Se hacen uso de datos (C05, C08) entrelazados organizados en un mismo contexto: se identificaron qué plataformas se vieron afectadas (S06), que fueron meramente internas (C06). |
+| D | Ninguna | Es un supuesto no fundamentado, está saltando a una conclusión por algo no confirmado, que no equivale a inexistente (C07) |
+| E | Inteligencia | Establece un juicio de probabilidad estimativo, está orientado a tomar una decisión antes del comité y propone acciones inmediatas (C06, C08) |
 
 
 
@@ -35,9 +25,9 @@
 
 | Capa | Formulación | Filas usadas | Qué limitación tiene |
 |---|---|---|---|
-| Dato | La actividad escaló hasta acceso a nivel de nodo, recolección de credenciales de nube y de clúster, y movimiento lateral por varios clústeres internos a lo largo de un fin de semana. | C06 | ¿hay cuentas o recursos de organizaciones asociadas de algún modo con las credenciales internas? |
-| Información | Las credenciales internas de los servicios se vieron vulneradas, obteniendo credenciales y conjuntos de datos internos y afectando los clústeres y nodos de producción un fin de semana completo | C03, C04, C06, S06, S10 | ¿con qué certidumbre podemos afirmar que la información vulnerada no está almacenada en algún otro sitio? |
-| Inteligencia | Tomando en cuenta la extracción de conjuntos de datos y posible asociación de credenciales internas con productos o tokens de organizaciones y usuarios, siendo que puedan haber sido almacenadas en un ambiente independiente al ciberataque, es factible hacer una rotación de credenciales | C04, S06, S07 | ¿con qué frecuencia? |
+| Dato | La actividad escaló hasta el acceso a nivel de nodo, recolección de credenciales de nube y de clúster, y movimiento lateral por varios clústeres internos a lo largo de un fin de semana. | C06 | El dato no aclara que servicios o credenciales propias podrían haber estado en esos clústeres |
+| Información | El acceso no autorizao vuleró credenciales y conjuntos de datos internos, afectando los clústeres y nodos de producción un fin de semana completo | C03, C04, C06, S06, S10 | No se especifica si los conjuntos de datos afectó a cuentas o tokens de usuarios externos |
+| Inteligencia | Tomando en cuenta la extracción de conjuntos de datos y posible asociación de credenciales internas con productos o tokens de organizaciones y usuarios, es posible que las credenciales estén expuestas, por lo que es recomendable hacer una rotación de credenciales | C04, S06, S07, O3 | Se sigue evaluando el impacto a clientes externos (C09) por lo que no se sabe si las credenciales fueron expuestas o la rotación es una medida preventiva |
 
 ---
 
@@ -79,8 +69,8 @@
 
 | Prioridad | Pregunta | Te ayuda a decidir |
 |---:|---|---|
-| 1 | | |
-| 2 | | |
+| 1 | ¿Existe riesgo directo de que el compromiso de credencialesinternas de producción (C04, C06, S06, S10) haya alcanzado a nuestras credenciales de usuario o tokens de organización (S05) asociadas a la plataforma? | O3 (Rotar las credenciales de la plataforma) y O5 (Revisar credenciales propias publicadas fuera). |
+| 2 | ¿La extracción de conjuntos de datos internos (C04, S07) o el acceso a nodos de producción (C06) afectaron la integridad de los modelos o librerías (S01, S08) que consumimos en nuestros servicios, más allá de lo declarado por una parte del caso, la plataforma (C07, C08)? | O2 (Congelar las descargas automatizadas) y O4 (Verificar la integridad de los artefactos ya descargados) |
 
 ---
 
@@ -88,14 +78,13 @@
 
 ### 3.1 Recorrido por las fases
 
-| Fase | Entrada utilizada | Decisión o tarea | Salida | Siguiente fase |
-|---|---|---|---|---|
-| Dirección y planificación | | | | |
-| Obtención | | | | |
-| Procesamiento | | | | |
-| Análisis y producción | | | | |
-| Difusión | | | | |
-| Retroalimentación | | | | |
+| Fase | Entrada utilizada | Decisión o tarea | Salida | Siguiente fase | 
+| Dirección y planificación | Petición informal del responsable "He visto lo de la brecha" y las opciones que tenemos antes del comité | Concretar los 7 componentes del requerimiento, fijar el horizonte a las 13:00, establecer las exclusiones (no interactuar con tokens de la plataforma externa) y priorizar las 2 preguntas de inteligencia | Requerimiento de inteligencia acotado y plan de investigación centrado en credenciales (S05, S06) e integridad de artefactos (S01, S08) | Obtención | 
+| Obtención | Requerimiento acotado y las 2 preguntas de inteligencia priorizadas | Recopilar las evidencias públicas (C01–C14), superficies (S01–S10) y fuentes (F01–F12), respetando la prohibición de escaneo externo | Muestra de eventos, declaraciones oficiales de la plataforma y referencias de superficies sin procesar | Procesamiento | 
+| Procesamiento | Muestra de hechos (C01–C14) y superficies de la plataforma (S01–S10) | Cruzar e integrar los hechos con las superficies afectadas (C04, C06 con S06, S10), clasificar por grado de corroboración (una_parte, prensa) y aislar las lagunas explícitas (C09, C13) | Matriz estructurada de eventos procesados, verificar impacto en credenciales internas e inventario de lagunas de información | Análisis y producción | 
+| Análisis y producción | Matriz estructurada de eventos, superficies e inventario de lagunas (C13) | Evaluar hipótesis de riesgo debido a la falta de evidencia de manipulación en artefactos (C07, C08) con riesgo en credenciales (C04, C06), y detectar que la laguna en datos de clientes (C09) exige verificar registros de auditoría interna propios | Detección de laguna crítica sobre afectación a tokens de la empresa (S05) que requiere consultar únicamente los registros de auditoría interna locales | Obtención (Retorno para recuperar registros locales de auditoría pasivos antes del comité) | 
+| Difusión | Valoración de impacto validada con nivel de confianza (media) (una_parte), opciones existentes (O1–O7) y limitaciones explícitas (C09) | Adaptar el resultado para el comité de las 13:00 mediante una Nota de Situación ejecutiva orientada a la toma de decisiones | Nota de Situación ejecutiva terminada con recomendación de activar O3 (rotar credenciales) y O7 (fijar punto de revisión) para el responsable | Retroalimentación | 
+| Retroalimentación | Observaciones, preguntas y acuerdos adoptados por el comité después de la reunión de las 13:00 | Evaluar si las decisiones tomadas o la aparición de nuevas publicaciones por parte de la plataforma requieren redefinir las preguntas de investigación para el seguimiento post-comité | Solicitud de actualización del requerimiento de inteligencia y nuevo plan de seguimiento continuo de la brecha. | Dirección y planificación (Retorno al inicio para ajustar el requerimiento tras el comité) | 
 
 ---
 
@@ -105,29 +94,37 @@
 
 **Qué puedes afirmar el 20 de julio**
 
-<!-- Con sus identificadores. -->
+Se confirma un acceso no autorizado a la infraestructura de producción de Hugging Face (C03, S10), con recolección de credenciales de servicio y datos internos (C04, C06, S06, S07). La plataforma declara sin evidencia de manipulación sus modelos públicos y la cadena de suministro software (C07, C08, S01, S08). El riesgo directo para nuestra organización reside en la posible exposición de nuestras credenciales o tokens de acceso (S05).
 
 **Nivel de confianza y justificación**
 
-<!-- Baja, media o alta, y qué la sostiene en ese nivel y no en otro. -->
+Confianza media. Toda la información proviene del comunicado de la entidad afectada (C03–C13, F01) con grado de corroboración una_parte. La cobertura de prensa solo replica la nota sin verificación propia (C14, F05) y la investigación sobre datos de clientes continúa abierta (C09).
 
 **Recomendación al comité**
 
 | Opción | ¿La activas? | Por qué, y por qué es proporcionada |
 |---|---|---|
-| | | |
+| O1 - Seguir con normalidad | NO | Imprudente mientras no se roten nuestras credenciales (S05) |
+| O2 - Congelar descargas automáticas | SÍ | Medida preventiva temporal y reversible mientras se contenga el entorno |
+| O3 - Rotar credenciales | SÍ | Prioritaria Mitiga el riesgo de suplantación (C04, C06) sin impacto operativo |
+| O4 - Verificar artefactos locales | SÍ | Control pasivo interno mediante comprobación de hashes (C07) |
+| O5 - Revisar credenciales externas | SÍ | Verificación rápida para descartar fuga de tokens de organización (S05) |
+| O6 - Avisar a clientes | NO | Desproporcionado; la investigación (C09) sigue abierta sin afectación en nuestros servicios |
+| O7 - Mantener observación | SÍ | Permite fijar un punto de revisión tras el comité ante nuevos datos |
 
 **Limitación**
 
 <!-- Qué te falta saber y cómo condiciona lo anterior. -->
 
+La evaluación de afectación a datos de clientes continúa abierta (C09) y se desconoce la identidad del responsable o el modelo de agentes (C13), lo que impide descartar una exfiltración previa de credenciales.
+
 ### 4.2 Hechos, inferencias y supuestos
 
 | Afirmación de tu nota | ¿Hecho, inferencia o supuesto? | Por qué |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+| Hugging Face declaró que no se encontró evidencia de manipulación en los modelos públicos (C07) | Hecho | Registro directo e identificable del comunicado oficial (C07, F01) |
+| Existe riesgo de exposición en nuestras credenciales (S05) debido a la recolección de credenciales de la plataforma (C04, C06) | Inferencia | Relaciona dos hechos comprobados (C04, C06 y S05) para deducir una vulnerabilidad no confirmada explícitamente |
+| Los artefactos descargados son seguros porque no se detectó manipulación en el origen (C07) | Supuesto | Asume erróneamente que la ausencia de evidencia de manipulación equivale a seguridad garantizada (lo no confirmado no equivale a inexistente) |
 
 ---
 

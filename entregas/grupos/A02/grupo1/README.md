@@ -47,15 +47,27 @@
 
 ### 2.3 Lo que no se sabe
 
-> **Qué debe contener:** las lagunas que una investigación desde fuentes abiertas podría ayudar a reducir y las que no podría reducir, con el motivo.
+| ID | Laguna | Se puede reducir mediante fuentes abiertas? | Motivo | 
+| - | - | - | - |
+| 01 | No se sabe si los datos que se han puesto a la venta, ni la muestra son reales o no, y, si en caso de serlo, son reales únicamnete los de la muestra | En parte | Si se puede comprobar si la muestra es real o no, pero no se pueden comprobar el resto de datos sin comprarlos |
+| 02 | No se conoce ningun dato del hacker 'HaciendaSec', además, su cuenta no tiene ninguna publicación y ha sido creada hace menos de un mes, por lo que carece también de credibilidad | Si | Se conoce el nombre del atacante, por lo que se puede hacer una investigacion basada en fuentes publicas |
+| 03 | Si los datos de Hacienda se han visto realmente vulnerados o no | No | No se puede saber sin tener acceso al propio sistema interno de Hacienda |
 
 ## 3. Necesidad de inteligencia
 
 | Pregunta | Laguna de la que procede (2.3) | Quién usaría la respuesta | Para qué decisión o protección |
 |---|---|---|---|
-| | | | |
+| La información publicada como muestra, ¿es cierta? | 01 | Ministerio de Hacienda y AEPD | Para confirmar la posibilidad de que el atacante tenga acceso a los datos |
+| Si la información de muestra es cierta, ¿era información ya filtrada previamente o completamente nueva? | 01 | Ministerio de Hacienda y AEPD | Para saber si es necesario tomar medidas al respecto o es únicamente un intento de estafa con datos falsos |
+| ¿Quién es HaciendaSec?, ¿Puede ser el responsable de/estar relacionado con los robos de datos en la Agencia Tributaria en 2025? | 02 | Grupo de delitos telemáticos (GDT) | Para tomar las acciones legales necesarias contra el atacante |
+| ¿Existen vulnerabilidades en la infraestructura de Hacienda que puedan dar legitimidad a las filtraciones? | 03 | Equipo de ciberseguridad de Hacienda | Para solventarlo y evitar futuras filtraciones |
 
-> **Qué debe contener:** las preguntas que la investigación querría responder, derivadas de lo que no se sabe, y la finalidad legítima de cada una. Añade también qué preguntas **no** se intentarían responder y por qué.
+### Preguntas que no se intentarán responder
+| Pregunta | Por qué |
+| - | - |
+| ¿Son reales todos los datos que posee el atacante? | Para contestar esta pregunta, seria necesario comprar lo que vende el atacante, que no es una fuente abierta |
+| ¿Por dónde ha accedido el hacker a la bd de Hacienda? | Para saberlo sería necesario acceder a las redes internas de Hacienda, lo que no está permitido sin su autorización |
+| ¿Que hay en los logs de hacienda con respecto a accesos? | No hay acceso público a estos datos | 
 
 ## 4. Legitimación y no interferencia
 

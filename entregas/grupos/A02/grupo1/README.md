@@ -41,7 +41,9 @@
 
 ### 2.2 Lo que puede darse por establecido
 
-> **Qué debe contener:** solo lo que las fuentes permiten sostener, con su identificador, y por qué se considera establecido.
+**Existencia de una oferta de venta de datos**: _[F01, F02, F03, F04, F06]:_ El 31 de enero de 2026 se hizo visible en foros de la dark web una publicación de un actor bajo el alias **HaciendaSec**, en la que afirma haber sustraído y puesto a la venta una base de datos con información personal, bancaria y fiscal de 47,3 millones de ciudadanos. **_Por qué se considera establecido:_** Es un hecho objetivo y documentado el evento de la publicación y las afirmaciones del actor, reportado por empresas de monitorización (Hackmanac, UpGuard) y múltiples medios. (Nota: Se da por establecida la existencia del anuncio, no la veracidad de las afirmaciones del atacante).
+
+**Inexistencia de intrusión en los sistemas propios del Ministerio**: _[F04, F05]_: Tras verificaciones internas y auditorías técnicas, el Ministerio de Hacienda no ha detectado rastros de ciberataque, accesos no autorizados ni exfiltración de información en sus sistemas oficiales. Por qué se considera establecido: Existe una declaración oficial e inequívoca de la organización afectada [F04], respaldada por el análisis de un organismo público técnico e independiente (Cibersegurida de Galicia) [F05].
 
 ### 2.3 Lo que no se sabe
 

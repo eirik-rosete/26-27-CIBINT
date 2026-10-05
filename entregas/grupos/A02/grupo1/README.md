@@ -58,14 +58,32 @@
 > **Qué debe contener:** las preguntas que la investigación querría responder, derivadas de lo que no se sabe, y la finalidad legítima de cada una. Añade también qué preguntas **no** se intentarían responder y por qué.
 
 ## 4. Legitimación y no interferencia
+**Quién investiga y desde qué posición**
+Nosotros, como estudiantes de la asignatura de Ciberinteligencia, estamos realizando una práctica para la asignatura sobre este caso. Por ende, al no ser la policía, el CNI o una empresa privada contratada por Hacienda, no tenemos permiso para acceder a datos personales. Nuestra posición es únicamente para aprendizaje, basándonos en un caso real e información pública que sí podemos tratar.
 
-> **Qué debe contener:**
->
-> - quién investiga y desde qué posición;
-> - qué marco normativo se aplica en esa posición;
-> - quién sería responsable de los datos personales que se tratasen y con qué base de licitud;
-> - qué no corresponde al grupo precisamente por ser quien es, y a quién correspondería;
-> - qué otras investigaciones existen o pueden existir sobre el caso y cómo se evitaría entorpecerlas.
+**Marco normativo aplicable**
+Nuestra investigación se basa en recopilar información de fuentes abiertas (OSINT) desde España. Por esto debemos acatar las leyes generales y, a su vez, seguir la normativa de protección de datos (RGPD europeo y LOPDGDD española). También queremos recalcar que para la realización de esta investigación se tendrá en cuenta el Protocolo de Berkeley mencionado en clase, para cumplir con la metodología propuesta y las enseñanzas aprendidas.
+
+**Responsable de los datos y base de licitud**
+Para esta investigación, el responsable de tratamiento de datos somos los propios estudiantes. Debemos ser conscientes de qué datos disponemos y hasta dónde podemos llegar; también es importante aclarar que la propia universidad nos aporta ciertos datos como base en las instrucciones de la actividad, como el archivo Hechos.csv y el archivo Fuentes.csv.
+
+Además, en el marco legal, nosotros proponemos un seguimiento de interés legítimo. Esto quiere decir que, en caso de encontrar datos de terceros sin disponer de su consentimiento, queremos aclarar que nuestro interés es académico y no queremos exponer a terceros. Por esto nos limitaremos a tratar únicamente la información que esté a nuestra disposición y no afecte a la integridad de otros.
+
+**Qué NO nos corresponde y a quién sí**
+En primer lugar, nosotros somos estudiantes y no tenemos autoridad legal ni operativa. Como estudiantes nos hacemos una pregunta clave para realizar la actividad: ¿cómo actuaría un equipo de investigación autorizado? Con esta pregunta podemos derivarla en otras que se haría dicho equipo y podemos responder cómo las trataríamos.
+
+¿Podemos acceder a los servidores de Hacienda para hacer un análisis forense? No, eso le corresponde al Ministerio y al CCN-CERT.
+
+¿Podemos detener a HaciendaSec? No, eso le corresponde a las Fuerzas y Cuerpos de Seguridad del Estado (FCSE).
+
+¿Podemos auditar si Hacienda protegía bien los datos o sancionarles? No, eso le toca a la Agencia Española de Protección de Datos (AEPD).
+
+¿Podemos comprarle la base de datos a HaciendaSec para ver si es real? No (estaríamos financiando un delito).
+
+**Otras investigaciones y no interferencia**
+Usando las fuentes, sabemos seguro que hay investigaciones en curso por parte del Ministerio de Hacienda (auditoría interna) y el CCN-CERT (mencionado en F06). Además, es lógico deducir que la Policía/Guardia Civil investigará la venta en la dark web, y la AEPD el posible fallo de seguridad.
+
+¿Cómo evitamos entorpecerlas? Aquí agregamos el concepto de investigación pasiva. Queremos dejar claro que nuestro grupo NO interactuará con el atacante (nada de crear un usuario falso para chatear con HaciendaSec en el foro), NO escanearemos de forma activa los puertos o servidores del Ministerio, y NO alertaremos a las víctimas. Solo observaremos información que ya es pública.
 
 ## 5. Plan de obtención
 
